@@ -1,6 +1,4 @@
-from ozioma import chat_bot_2, calculator
-from ozioma.function_module import exercises
-from ozioma import class_task
+from ozioma.building import class_task
 
 if __name__ == "__main__":
     natives_1 = []

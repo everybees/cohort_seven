@@ -1,19 +1,29 @@
 class Building(object):
-    def __init__(self, name, cohorts):
+    def __init__(self, name):
        self.name = name
-       self.cohorts=cohorts
+       self.cohorts=[]
+
     def __str__(self) ->str:
-        return self.name + "," + self.cohorts
+        return self.name
+
+    def add_cohorts_to_building(self, cohort):
+        self.cohorts.append(cohort)
+        
 
 
 class Cohort(object):
-    def __init__(self, name, description, natives):
+    def __init__(self, name, description):
        self.name = name
        self.description = description
-       self.natives=natives
-
+       self.natives=[]
+       
     def __str__(self):
         return self.name
+    
+    def add_native_to_cohort(self, native):
+        self.natives.append(native)
+
+        
         
 
 class Native(object):
@@ -25,3 +35,9 @@ class Native(object):
 
     def __str__(self) -> str:
         return self.first_name + " " + self.last_name 
+
+
+# def check_natives(native):
+#     if native is not list:
+#         raise ValueError
+#     return nativep

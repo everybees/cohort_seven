@@ -143,54 +143,83 @@ if __name__ == "__main__":
     cohorts.append(cohort_four)
 
     
-    building = class_task.Building("Building Name: Semicolon Village", cohorts)
-    print("=" * 35)
-    print(building.building_name)
-    print("=" * 35)
-    print()
+    # building = class_task.Building("Building Name: Semicolon Village", cohorts)
+    # print("=" * 35)
+    # print(building.building_name)
+    # print("=" * 35)
+    # print()
+
+
 
 
     # print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
     # print("=" * 78)
 
     
-    for cohort in building.cohorts:
-        # for native in cohort.native:
-        #     print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
-        #     print("------------------------------------------------------------------------------")
+    # for cohort in building.cohorts:
+    #     # for native in cohort.native:
+    #     #     print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
+    #     #     print("------------------------------------------------------------------------------")
         
-        if cohort.cohort_name == "Cohort One":
-            print ("Cohort Name:",cohort.cohort_name)
-            print(cohort.cohort_description)
-            print("=" * 78)
-            print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
-            for native in cohort.native:
-                print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
-                print("------------------------------------------------------------------------------")
-        elif cohort.cohort_name == "Cohort Two":
-            print ("Cohort Name:",cohort.cohort_name)
-            print(cohort.cohort_description)
-            print("=" * 78)
-            print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
-            print("=" * 78)
-            for native in cohort.native:
-                print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
-                print("------------------------------------------------------------------------------")
-        elif cohort.cohort_name == "Cohort Three":
-            print ("Cohort Name:", cohort.cohort_name)
-            print(cohort.cohort_description)
-            print("=" * 78)
-            print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
-            print("=" * 78)
-            for native in cohort.native:
-                print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
-                print("------------------------------------------------------------------------------")
-        else:
-            print ("Cohort Name:",cohort.cohort_name)
-            print(cohort.cohort_description)
-            print("=" * 78)
-            print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
-            print("=" * 78)
-            for native in cohort.native:
-                print(native.id + "     |        " +native.first_name + "      |       " +native.last_name + "     |       " + native.sex)
-                print("------------------------------------------------------------------------------")
+    #     if cohort.cohort_name == "Cohort One":
+    #         print ("Cohort Name:",cohort.cohort_name)
+    #         print(cohort.cohort_description)
+    #         print("=" * 78)
+    #         print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
+    #         for native in cohort.native:
+    #             print(native.id + "\t\t\t" +native.first_name + "\t\t" +native.last_name + "\t\t" + native.sex)
+    #             print("------------------------------------------------------------------------------")
+    #     elif cohort.cohort_name == "Cohort Two":
+    #         print ("Cohort Name:",cohort.cohort_name)
+    #         print(cohort.cohort_description)
+    #         print("=" * 78)
+    #         print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
+    #         print("=" * 78)
+    #         for native in cohort.native:
+    #             print(native.id + "\t\t\t" +native.first_name + "\t\t" +native.last_name + "\t\t" + native.sex)
+    #             print("------------------------------------------------------------------------------")
+    #     elif cohort.cohort_name == "Cohort Three":
+    #         print ("Cohort Name:", cohort.cohort_name)
+    #         print(cohort.cohort_description)
+    #         print("=" * 78)
+    #         print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
+    #         print("=" * 78)
+    #         for native in cohort.native:
+    #             print(native.id + "\t\t\t" +native.first_name + "\t\t" +native.last_name + "\t\t" + native.sex)
+    #             print("------------------------------------------------------------------------------")
+    #     else:
+    #         print ("Cohort Name:",cohort.cohort_name)
+    #         print(cohort.cohort_description)
+    #         print("=" * 78)
+    #         print("SCN No.     ||    FIRST NAME         ||   LAST NAME         ||   SEX")
+    #         print("=" * 78)
+    #         for native in cohort.native:
+    #             print(native.id + "\t" + "|" + "\t" + native.first_name + "\t" + "|" + "\t" + native.last_name + "\t" + "|" + "\t" + native.sex)
+    #             print("------------------------------------------------------------------------------")
+
+        
+
+    building = []
+    number_of_buildings = int(input("How many buildings do nyou want to create: "))
+    for a in range(number_of_buildings):
+        name_of_building = (input("Enter building name: "))
+        building = class_task.Building(name_of_building, cohorts)
+        number_of_cohorts = int(input("Enter the no of cohorts in " + str(a+1)+ ": "))
+        for a in range(number_of_cohorts):
+            name_of_cohort = input("Enter name of cohort " + str(a+1) + ": ")
+            description = input("Enter cohort desciption: ")
+            cohort = class_task.Cohort(name_of_cohort, description, native)
+            number_of_natives = int(input("Enter the number of natives in " + name_of_cohort + ":" ))
+            for a in range(number_of_natives):
+                id_number = input("Enter id number of native " + str(a+1) + " in " + name_of_cohort + ": ")
+                first_name = input("Enrer First Name: ")
+                last_name = input("Enter last name: ")
+                gender = input("Enter gender: ")
+                # native = class_task.Natives(id_number, first_name, last_name, gender)
+                # cohort.native.append(native._first_name_, native._last_name_, native._id_, native._sex)
+            building.cohorts.append(cohorts)
+            # building.append(building.cohorts)
+
+    for cohort in building.cohorts:
+        for native in cohort.native:
+            print(native)

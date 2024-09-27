@@ -14,13 +14,13 @@ class Building:
 class Cohort:
     def __init__(self, cohort_name):
         self.cohort_name = cohort_name
-        self.cohort_native = []
+        self.cohort_natives = []
 
     def __str__(self):
         natives = ""
-        for native in self.cohort_native:
+        for native in self.cohort_natives:
             natives += native + "\n"
-        return self.cohort_name + "\n" + "SCN No.   |   First Name  |   Last Name   |   Sex" + "\n" + natives
+        return self.cohort_name + "\n" + "SCN No. |   First Name  |   Last Name   |   Sex" + "\n" "==================================================" "\n" + natives
 
 
 class Native:
@@ -31,7 +31,7 @@ class Native:
         self.sex = sex
 
     def __str__(self):
-        return self.sc_id + "\t|" + self.first_name + "\t\t|" + self.last_name + "\t\t|" + self.sex
+        return self.sc_id + "\t\t|" + self.first_name + "\t\t\t|" + self.last_name + "\t\t\t|" + self.sex
 
 
 def register_native_in_cohort(sc_id, first_name, last_name, sex):

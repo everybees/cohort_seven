@@ -27,7 +27,7 @@ class Building:
         self.cohorts=cohorts
     
     def __str__(self) -> str:
-        return self.building_name + " " + self.cohorts
+        return self.building_name
 
 class Cohort:
     def __init__(self, cohort_name,cohort_description,natives):
@@ -37,7 +37,7 @@ class Cohort:
 
         
     def __str__(self) -> str:
-        return self.cohort_name + " " + self.cohort_description + " " + self.natives
+        return self.cohort_name 
         
         
 
